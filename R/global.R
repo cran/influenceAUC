@@ -1,0 +1,16 @@
+# Quiet concerns of R CMD check
+utils::globalVariables(c("Index",
+                         "SIF",
+                         "pivot",
+                         "unitslope",
+                         "Outcome",
+                         "sifpoten",
+                         "x",
+                         "y",
+                         "color",
+                         "shape",
+                         "label",
+                         "deifpoten",
+                         "testpoten",
+                         "slopepoten",
+                         "curvaturepoten"))
