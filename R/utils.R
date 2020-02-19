@@ -21,7 +21,7 @@ build_AUC_plot <- function(df, threshold, title = "", show.legend = FALSE, ylimi
                    aes_string(x = "x",
                               y = "y",
                               color = "color",
-                              shape = "shape",
+                              shape = "color",
                               label = "label")) +
     geom_point() +
     scale_shape_manual(values = c(4, 16)) +
