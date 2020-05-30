@@ -7,7 +7,7 @@
 plot_sequentially(objs)
 }
 \arguments{
-\item{output}{A valid object (e.g., `IAUC`, `LAUC`)}
+\item{objs}{A valid object (e.g., `IAUC`, `LAUC`)}
 }
 \description{
 Internal function: Plot sequentially

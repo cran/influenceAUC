@@ -171,3 +171,40 @@ plot.LAUC <- function(x, ...) {
 plot.ICLC <- function(x, ...) {
   plot_sequentially(x)
 }
+
+
+#' @title Determine Identified Influential Cases
+#'
+#' @description Provide either mutually identified influential cases through IAUC and LAUC or compare with cumulative lift charts to determine which theoretical approach is more appropriate.
+#'
+#' @param inf_list An IAUC class object
+#' @param local_list An LAUC class object
+#' @seealso \link{IAUC} \link{LAUC}
+#' @export
+#' @references Ke, B. S., Chiang, A. J., & Chang, Y. C. I. (2018). Influence Analysis for the Area Under the Receiver Operating Characteristic Curve. Journal of biopharmaceutical statistics, 28(4), 722-734.
+#' @examples
+#'
+#' library(ROCR)
+#' data("ROCR.simple")
+#' Ioutput <- IAUC(ROCR.simple$predictions, ROCR.simple$labels)
+#' Loutput <- LAUC(ROCR.simple$predictions, ROCR.simple$labels)
+#' pinpoint(Ioutput, Loutput)
+
+pinpoint <- function(inf_list, local_list) {
+  hampel <- fetch_output_indeces(inf_list)
+  cook <- fetch_output_indeces(local_list)
+
+  ratio <-
+    length(intersect(hampel, cook)) / length(union(hampel, cook))
+
+  if (ratio > 0.5) {
+    cat("The possible influential cases are\n",
+        sort(intersect(hampel, cook)),
+        ".")
+  } else {
+    writeLines(
+      "IAUC and LAUC reach an inconsistent conclusion.\n
+      Select the one (IAUC or LAUC) that is more consistent with cumulative lift charts."
+    )
+  }
+}

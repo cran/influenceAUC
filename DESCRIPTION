@@ -1,7 +1,7 @@
 Package: influenceAUC
 Type: Package
 Title: Identify Influential Observations in Binary Classification
-Version: 0.1.1
+Version: 0.1.2
 Authors@R: c( 
     person("Bo-Shiang", "Ke", email = "naivete0907@gmail.com", role = c("cre", "aut", "cph")), 
     person("Yuan-chin Ivan", "Chang", email = "ycchang@sinica.edu.tw", role = "aut"), 
@@ -13,12 +13,12 @@ License: GPL-3
 BugReports: https://github.com/BoShiangKe/InfluenceAUC/issues
 Encoding: UTF-8
 LazyData: true
-RoxygenNote: 7.0.2
+RoxygenNote: 7.1.0
 Imports: dplyr, geigen, ggplot2, ggrepel, methods, ROCR
 NeedsCompilation: no
-Packaged: 2020-02-19 00:06:01 UTC; naive
+Packaged: 2020-05-30 03:48:29 UTC; naive
 Author: Bo-Shiang Ke [cre, aut, cph],
   Yuan-chin Ivan Chang [aut],
   Wen-Ting Wang [aut]
 Repository: CRAN
-Date/Publication: 2020-02-19 05:40:03 UTC
+Date/Publication: 2020-05-30 04:30:02 UTC
